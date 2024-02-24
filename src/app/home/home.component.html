@@ -1,0 +1,28 @@
+<p-table [value]="books" [tableStyle]="{'min-width': '60rem'}">
+  <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+          <h1>Books</h1>
+      </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+      <tr>
+          <th>
+            <h3>Title</h3>
+          </th>
+          <th>
+            <h3>Image</h3>
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-book>
+      <tr>
+          <td>
+            <h4>{{book.title}}</h4>
+          </td>
+          <td>
+            <img [src]="book.url" alt="{{book.title}}" style="height: 200px;"
+            (click)="openBookModal(book.bookId)">
+          </td>
+      </tr>
+  </ng-template>
+</p-table>

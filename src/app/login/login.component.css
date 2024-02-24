@@ -1,0 +1,11 @@
+.container-fluid{
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+}
+
+.loginpage{
+  display: grid;
+  place-items: center;
+  margin-top: 120px;
+}

@@ -1,0 +1,56 @@
+.container-fluid{
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+  }
+  
+  .profilepage{
+    display: grid;
+    place-items: left;
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+  .navbar-item{
+    margin-left: 15px;
+    font-size: 20px;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h3{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:darkblue;
+}
+h1,h2{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkgreen;
+}
+h4{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkred;
+}
+
+.head{
+    font-size: large;
+}
+.card-container {
+  display:flex;
+  justify-content:left; 
+  gap: 10px;
+}
+
+.userbooksdetailspage{
+    display: grid;
+    place-items: left;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.labelfirstname,.labellastname{
+  color:darkred;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.inputfirstname,.inputlastname{
+  font-size: 16px;
+}
+

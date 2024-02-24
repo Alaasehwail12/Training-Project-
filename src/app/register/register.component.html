@@ -1,0 +1,78 @@
+<p-card class="registerpage" [style]="{ width: '360px', height: '550px', border: '2px solid skyblue', borderRadius: '15px' }">
+  <div class="form-group">
+    <h2>Sign Up</h2>
+  </div>
+  <form class="form" [formGroup]="userForm" (ngSubmit)="addNewUser()">
+    <div class="form-group">
+      <img src="assets/images/register.png" style="height: 50px;" alt="">
+    </div>
+    <div class="form-group">
+      <span class="p-float-label">
+        <input pInputText id="firstname" formControlName="firstName" 
+        [(ngModel)] = "user.firstName"
+        style="width: 250px;" />
+        <label htmlFor="firstname">First Name</label>
+      </span>
+    </div>
+    <div class="form-group">
+      <span class="p-float-label">
+        <input pInputText id="lastname" formControlName="lastName" 
+        [(ngModel)] = "user.lastName"
+        style="width: 250px;" />
+        <label htmlFor="lastname">Last Name</label>
+      </span>
+    </div>
+    <div class="form-group">
+        <span class="p-float-label">
+            <input pInputText id="email" formControlName="email" 
+            [(ngModel)] = "user.email"
+            style="width: 250px;" 
+            (blur)="alreadyExistEmail()"
+            />
+            <label htmlFor="email">Email</label>
+        </span>
+        <div *ngIf="userForm.get('email')?.hasError('email')">
+            <p class="text-danger">Invalid Email Address</p>
+        </div>
+        <div *ngIf="availableEmail === 'taken' " class="text-danger">
+            <p class="text-danger">This Email is already registered </p>  
+        </div>
+    </div>
+          
+    <div class="form-group">
+      <span class="p-float-label">
+        <input pInputText id="address" formControlName="address" 
+        [(ngModel)] = "user.address"
+        style="width: 250px;" />
+        <label htmlFor="address">Address</label>
+      </span>
+    </div>
+    <div class="form-group">
+      <span class="p-float-label">
+        <input pPassword id="password" formControlName="password" 
+        [(ngModel)] = "user.password"
+        style="width: 250px;"
+          [ngClass]="{ 'error-border': passwordMatchError }" />
+        <label htmlFor="password">Password</label>
+      </span>
+    </div>
+    <div class="form-group">
+        <span class="p-float-label">
+          <input pPassword id="repeatpassword" formControlName="repeatPassword" style="width: 250px;"
+            [ngClass]="{ 'error-border': passwordMatchError }" />
+          <label htmlFor="repeatpassword">Repeat Password</label>
+        </span>
+        <div *ngIf="passwordMatchError">
+          <p class="text-danger">Password does not match</p>
+        </div>
+    </div>
+    <div class="form-group">
+      <p-button label="Sign Up" styleClass="p-button-rounded" [style]="{ 'width.px': 120, 'height.px': 30, 'font-size.px': 16 }"
+        type="submit" [disabled]="userForm.invalid || availableEmail === 'taken'" 
+        (click)="openModal()" ></p-button>
+    </div>
+    <div class="form-group">
+      <a routerLink="/cancel" class="btn btn-link">Cancel</a>
+    </div>
+  </form>
+</p-card>
