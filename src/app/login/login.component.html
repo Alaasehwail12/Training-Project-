@@ -1,0 +1,44 @@
+
+<p-card  class="loginpage" 
+[style]="{ width: '360px', height:'500px', border: '2px solid skyblue',borderRadius: '15px' }">
+        <div class="form-group">
+            <h2>Login</h2>
+        </div>
+    <div class="container-fluid" >
+        <div class="form-group">
+            <img src="assets/images/login.png" style="height: 180px;" alt="">
+        </div>
+        <div class="form-group">
+            <span class="p-float-label">
+                <input pInputText id="username" [(ngModel)] = "username" 
+                (ngModelChange)="clearText()" style="width: 200px;"/>
+                <label htmlFor="username" >Username</label>
+            </span>
+            <span *ngIf="checkEmail === 'not registered' ">
+                        <p class="text-danger">This Email is not registered  </p>  
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="p-float-label">
+                <input pInputText id="password"  [(ngModel)] = "password"
+                (ngModelChange)="clearText()" style="width: 200px;"/>
+                <label htmlFor="password" >Password</label>
+            </span>
+            <span *ngIf="checkPassword === 'wrong password' ">
+                <p class="text-danger">Incorrect password</p>  
+            </span>
+        </div>
+        
+        <div class="form-group">
+                <p-button label="Login" styleClass="p-button-rounded" [style]="{'width.px': 80, 
+                'height.px': 30, 
+                'font-size.px': 16}" 
+                (click)="checkLogin()" 
+                ></p-button>
+        </div>
+        
+        <div class="form-group">
+            <a routerLink="/register" class="btn btn-link">Create new account</a>
+        </div> 
+    </div>
+</p-card>

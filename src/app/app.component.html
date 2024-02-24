@@ -1,0 +1,9 @@
+<nav class="navbar navbar-dark bg-primary" *ngIf="showNavbar()">
+    <ul>
+      <img src="assets/images/books.png" alt="" style="height: 60px;">
+      <a class="navbar-item" routerLink="/home" >Home</a>
+      <a class="navbar-item" routerLink="/userBooks" >Profile</a>
+      <a class="navbar-item" routerLink="/login" >Logout</a>
+    </ul>
+</nav>
+<router-outlet></router-outlet>

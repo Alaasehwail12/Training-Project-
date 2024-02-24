@@ -1,0 +1,23 @@
+.form{
+    display: grid;
+    place-items: center;
+  }
+  
+  .registerpage{
+    display: grid;
+    place-items: center;
+    margin-top: 120px;
+    
+  }
+
+  .text-danger{
+    font-size: 13px;
+  }
+
+  .error-border {
+    border-color: red;
+  }
+  
+
+
+
